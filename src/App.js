@@ -1,16 +1,16 @@
 // src/App.js
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import HomePage from "./components/HomePage";
-import ArticlePage from "./components/ArticlePage";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./HomePage.js";
+import Article from "./Article.js";
 
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/article/:slug" component={ArticlePage} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<HomePage></HomePage>} />
+        <Route path="/article/:slug" element={<Article></Article>} />
+      </Routes>
     </Router>
   );
 }

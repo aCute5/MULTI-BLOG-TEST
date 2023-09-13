@@ -8,4 +8,20 @@ const client = new GraphQLClient("https://graphql.datocms.com/", {
   },
 });
 
+export const fetchArticles = async () => {
+  const query = `
+    query {
+      allArticles {
+        id
+        title
+        _status
+        _firstPublishedAt
+      }
+    }
+  `;
+
+  const data = await client.request(query);
+  return data.allArticles;
+};
+
 export default client;

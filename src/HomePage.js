@@ -14,10 +14,7 @@ function HomePage() {
             allArticles {
               slug
               title
-              excerpt
-              coverImage {
-                url
-              }
+            
             }
           }
         `);
@@ -37,9 +34,9 @@ function HomePage() {
       <ul>
         {articles.map((article) => (
           <li key={article.slug}>
-            <img src={article.coverImage.url} alt={article.title} />
+            {/* <img src={article.coverImage.url} alt={article.title} />  */}
             <h2>{article.title}</h2>
-            <p>{article.excerpt}</p>
+            <p></p>
             <Link to={`/article/${article.slug}`}>Leggi di più</Link>
           </li>
         ))}
