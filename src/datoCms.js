@@ -16,6 +16,11 @@ export const fetchArticles = async () => {
         title
         _status
         _firstPublishedAt
+        body
+        image {
+          url
+        }
+        slug
       }
     }
   `;

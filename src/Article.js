@@ -15,6 +15,9 @@ function ArticlePage() {
             article(filter: { slug: { eq: "${slug}" } }) {
               title
               content
+              image{
+                url
+              }
           }
         `);
 
