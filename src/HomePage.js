@@ -45,10 +45,13 @@ function HomePage() {
         <ul class="cardarticle">
           {articles.map((article) => (
             <li key={article.slug}>
-              <h2 class="title">{article.title}</h2>
               <img class="image" src={article.image.url} alt={article.title} />
+              <h2 class="title">{article.title}</h2>
               <p>{article.body}</p>
-              <Link to={`/article/${article.slug}`}>Vai all' Articolo </Link>
+              <Link to={`/article/${article.slug}`}>
+                {" "}
+                <button> Dettagli</button>{" "}
+              </Link>
             </li>
           ))}
           {}
