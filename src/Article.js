@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { gql, request } from "graphql-request";
+import client from "./datoCms";
 
 function ArticlePage() {
   const { slug } = useParams();
@@ -11,7 +12,7 @@ function ArticlePage() {
       try {
         const query = gql`
           query getArticle($slug: String!) {
-            article(slug: $slug} }) {
+            article(filter: { slug: { eq: $slug } }) {
               title
               body
               image {
@@ -25,10 +26,7 @@ function ArticlePage() {
           slug: slug,
         };
 
-        const endpoint =
-          "https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr";
-
-        const data = await request(endpoint, query, variables);
+        const data = await client.request(query, variables);
         setArticle(data.article);
       } catch (error) {
         console.error("Error fetching article:", error);
