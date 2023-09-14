@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { gql, request } from "graphql-request";
+import { gql } from "graphql-request";
 import client from "./datoCms";
 
 function ArticlePage() {
