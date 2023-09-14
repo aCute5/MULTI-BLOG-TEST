@@ -17,16 +17,33 @@ export const fetchArticles = async () => {
         _status
         _firstPublishedAt
         body
+        slug
         image {
           url
         }
-        slug
       }
     }
   `;
 
   const data = await client.request(query);
   return data.allArticles;
+};
+export const fetchArticle = async () => {
+  const query2 = `
+      query {
+        article {
+         id
+         image{
+          url
+         }
+         slug
+         body
+         title
+        }
+      }
+    `;
+  const data2 = await client.request(query2);
+  return data2.article;
 };
 
 export default client;

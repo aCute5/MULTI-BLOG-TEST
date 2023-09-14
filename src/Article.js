@@ -4,7 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import datoCms from "./datoCms";
 
 function ArticlePage() {
-  const { slug } = useParams();
+  const { slug } = useParams(null);
   const [article, setArticle] = useState(null);
 
   useEffect(() => {
@@ -33,12 +33,11 @@ function ArticlePage() {
   if (!article) {
     return <div>Loading...</div>;
   }
-
   return (
     <div>
       <Link to="/">Torna alla homepage</Link>
       <h1>{article.title}</h1>
-
+      {article.image && <img src="{article.image.url" alt=""></img>}
       <div dangerouslySetInnerHTML={{ __html: article.content }} />
     </div>
   );
