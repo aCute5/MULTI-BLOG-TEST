@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+li {
+  list-style: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.root {
+  width: 100vw;
+  height: 100vh;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  height: 20vh;
+  width: 20vw;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 0.8rem;
+}
+.navbar .logo {
+  width: 100%;
+  height: 100%;
+}
+.navbar h1 {
+  font-variant: small-caps;
+  color: #009882;
+  font-size: 2rem;
+  padding-right: 0.1rem;
+  font-weight: lighter;
+}
+.navbar .options {
+  margin-left: 3px;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar img {
+  padding: 1rem;
+  border-radius: 15%;
+  width: 100%;
+  height: 100%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.article {
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  padding: 1rem;
+}
+.cardarticle {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  font-variant: small-caps;
+}
+.cardarticle .title {
+  margin: 0.5rem;
+  font-weight: lighter;
+}
+.cardarticle .img {
+  flex-basis: 50%;
 }
