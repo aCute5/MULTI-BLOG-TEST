@@ -20,6 +20,13 @@ export const fetchArticles = async () => {
         image {
           url
         }
+        article{
+          id
+          slug 
+          image{
+            url
+          
+        }
       }
     }
   `;
